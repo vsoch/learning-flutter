@@ -5,7 +5,8 @@ FROM gradle:4.10.0-jdk8
 ENV SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip"
 ENV ANDROID_HOME="/usr/local/android-sdk"
 ENV ANDROID_VERSION=28
-ENV ANDROID_BUILD_TOOLS_VERSION=27.0.3
+ENV ANDROID_BUILD_TOOLS_VERSION=28.0.3
+ENV DEBIAN_FRONTEND noninteractive
 USER root
 RUN apt-get update && \
     apt-get install -y build-essential \
