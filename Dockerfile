@@ -19,9 +19,9 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
     apt --fix-broken -y install
 WORKDIR /code
 RUN tar xf /flutter.tar.xz
-ENV PATH="$PATH:/code/flutter/bin"
-ONBUILD flutter precache
-ONBUILD flutter channel beta && \
-     flutter upgrade && \
-     flutter config --enable-web
-ONBUILD yes | flutter doctor --android-licenses
+ENV PATH="$PATH:/code/flutter/bin:/usr/lib/jvm/java-8-openjdk-amd64/bin"
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+## User 1000 is gradle in the container, maps to my user
+RUN chown -R 1000 /code /usr/local/android-sdk /usr/bin/google-chrome /usr/lib/jvm && \
+    chmod +x /usr/local/android-sdk/tools/bin/sdkmanager
+USER 1000
