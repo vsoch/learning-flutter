@@ -40,14 +40,12 @@ working directory (with write) findable in the image. Let's shell inside.
 singularity shell --bind $PWD/flutter:/code/flutter --home /home/gradle --bind $HOME:/home/gradle flutter.sif
 ```
 
-And then run the content of `./setup_flutter.sh` to install the beta (with web support)
-You can also run the commands verbatim:
+And then run these commands to install the beta (with web support):
 
 ```bash
 flutter channel beta
 flutter upgrade
 flutter config --enable-web
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 
 /usr/local/android-sdk/tools/bin/sdkmanager --update
 yes | flutter doctor --android-licenses
 ```
