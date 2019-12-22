@@ -18,32 +18,6 @@ You could then shell into the image:
 docker run --entrypoint bash -it vanessa/learning-flutter
 ```
 
-## Check Installs
-
-Once inside the image, check the installation and devices with `flutter doctor`
-
-```bash
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel beta, v1.12.13+hotfix.6, on Linux, locale C.UTF-8)
- 
-[✓] Android toolchain - develop for Android devices (Android SDK version 28.0.3)
-[✓] Chrome - develop for the web
-[!] Android Studio (not installed)
-[✓] Connected device (2 available)
-
-! Doctor found issues in 1 category.
-```
-
-And you can also ensure that Chrome is installed:
-
-```bash
-$ flutter devices
-2 connected devices:
-
-Chrome     • chrome     • web-javascript • Google Chrome 79.0.3945.79
-Web Server • web-server • web-javascript • Flutter Tools
-```
-
 ## Export to Singularity
 
 We could finagle around changing permissions and getting a display working with 
@@ -123,5 +97,4 @@ This should launch the development compiler in a chrome browser!
 
 ![learning-flutter](img/learning-flutter.png)
 
-I'll do more
-work / continue with this README.md on another day.
+I'll do more work / continue with this README.md on another day.
